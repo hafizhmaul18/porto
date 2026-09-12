@@ -226,4 +226,16 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  /**
+   * Add Analytics Dashboard shortcut
+   */
+  window.addEventListener('DOMContentLoaded', function() {
+    const nav = document.querySelector('#navmenu ul');
+    if (nav && !nav.querySelector('a[href="dashboard.html"]')) {
+      const item = document.createElement('li');
+      item.innerHTML = '<a href="dashboard.html"><i class="bi bi-bar-chart-line navicon"></i> Analytics Dashboard</a>';
+      nav.appendChild(item);
+    }
+  });
+
 })();
